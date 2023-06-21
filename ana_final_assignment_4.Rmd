@@ -10,7 +10,7 @@ author: |
 
   | a.s.polobleher@students.uu.nl
 
-  | http://www.github.com/anableher
+  | http://www.github.com/anableher1
 
 date: "June 2023"
 
@@ -64,7 +64,7 @@ This interpretation will not be graded, but a Github shows the contributors to a
 
  
 
-[Fill in here]
+kayverduynlunel
 
  
 
