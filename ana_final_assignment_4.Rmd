@@ -156,7 +156,7 @@ datasummary(growth +rgdp60 ~ Mean + Median + SD + Min + Max, data = UnrevgrowthS
 
 **Designated place**: type one or two sentences describing this table of a fellow student below. For example, comment on the mean and median growth of both groups. Then stage, commit and push it to their github repository.
 
-Kay: These two tables show that countries that have had revolutions display lower growth rates and lower gdp than countries that have had zero revolutions. This can be seen most clearly in the mean and median, though it is interesting to note that whilst the minima for both tables are different, the maxima are not that far apart.  
+Kay: These two tables show that countries that have had revolutions display lower growth rates and lower gdp than countries that have had zero revolutions. This can be seen most clearly in the mean and median, though it is interesting to note that whilst the minima for both tables are different, the maxima are not really that far apart.  
 
  
 
