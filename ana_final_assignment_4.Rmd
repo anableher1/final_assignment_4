@@ -46,15 +46,12 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, error=TRUE)
 
 In this assignment, you will create a Github repository, containing this document and the .pdf output, which analyzes a dataset individually using some of the tools we have developed.
 
- 
 
 This time, make sure to not only put your name and student e-mail in your Rmarkdown header, but also your Github account, as I have done myself.
 
- 
 
 However, you will also pair up with a class mate and contribute to each others' Github repository. Each student is supposed to contribute to another student's work by writing a short interpretation of 1 or 2 sentences at the designated place (this place is marked with **designated place**) in the other student's assignment.
 
- 
 
 This interpretation will not be graded, but a Github shows the contributors to a certain repository. This way, we can see whether you have contributed to a repository of a class mate.
 
@@ -102,13 +99,9 @@ One of the variables in the dataset is `revolutions`, the number of revolutions,
 
 library(modelsummary); library(tidyverse)
 
- 
 
 library(dplyr)
 
- 
-
- 
 
 #Add the variable treat to the dataset
 
@@ -146,9 +139,6 @@ datasummary(growth +rgdp60 ~ Mean + Median + SD + Min + Max, data = RevGrowthSW)
 
 datasummary(growth +rgdp60 ~ Mean + Median + SD + Min + Max, data = UnrevgrowthSW)
 
- 
-
- 
 
 ```
 
@@ -174,11 +164,8 @@ In question 2, we have seen that growth rates differ markedly between countries 
 
 ```{r}
 
- 
-
 t.test(growth ~ treat, data = GrowthSW)
 
- 
 
 ```
 
@@ -190,13 +177,9 @@ t.test(growth ~ treat, data = GrowthSW)
 
 ```{r}
 
-#The p-value is 0.06871. This means that the probability that there is no significant difference in growth between revolutionary
-
-#and non-revolutionary is equal to 6.8%
+#The p-value is 0.06871. This value refers to the probability that there is no significant difference in growth between revolutionary and non-revolutionary is equal to 6.8%
 
 ```
-
- 
 
  
 
@@ -220,7 +203,7 @@ $$
 
 ```{r}
 
-#The variable rgdp60 lists the value oof GDP per capita in 1960, in 1960 US dollars. This could be a helpful variable, as countries in different developing stages generally display different growth rates. For example, a developed country in 1960 would display less growth in the period 1960-1995 than a developing country would.
+#The variable rgdp60 refers to the value of GDP per capita in 1960, converted to 1960 US dollars. This can be a helpful variable, as countries in different developing stages generally display different growth rates. For example, a developed country in 1960 would display less growth in the period 1960-1995 than a developing country would.
 
 ```
 
@@ -241,7 +224,6 @@ We now want to estimate a stepwise model. Stepwise means that we first estimate 
 ```{r}
 
  
-
 model1 <- lm(growth ~ education, data = GrowthSW)
 
  
@@ -256,7 +238,6 @@ model3 <- lm(growth ~ education + tradeshare + treat, data = GrowthSW)
 
 model4 <- lm(growth ~ education + tradeshare + treat + rgdp60, data = GrowthSW)
 
- 
 
 ```
 
@@ -285,22 +266,14 @@ list(model1, model2, model3, model4) |>
  
 
 **Question 3.5**: Edit the code chunk above to remove many statistics from the table, but keep only the number of observations $N$, and the $R^2$ statistic.
-
- 
-
- 
-
  
 
 ```{r}
 
 list(model1, model2, model3, model4) |>
-
   modelsummary(stars=T, gof_map = c("nobs", "r.squared"))
 
 ```
-
- 
 
  
 
@@ -310,7 +283,7 @@ list(model1, model2, model3, model4) |>
 
 ```{r}
 
-#Education, because it is the most statistically significant effect.
+#Education is the main driver of economic growth, because it is the most statistically significant effect.
 
 ```
 
@@ -336,9 +309,6 @@ list(model1, model2, model3, model4) %>%
 
   row_spec(7:8, bold = F, color = "white", background = "red")
 
- 
-
- 
 
 ```
 
@@ -350,23 +320,10 @@ list(model1, model2, model3, model4) %>%
 
 ```{r}
 
- 
-
-#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
-
- 
-
- 
 
 list(model1, model2, model3, model4) %>%
 
   modelsummary(stars=T, gof_map = c("nobs", "r.squared"), output = "growth_table.docx")
-
- 
-
- 
-
- 
 
 ```
 
